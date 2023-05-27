@@ -1,25 +1,37 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
+import * as child_process from 'child_process';
 import * as vscode from 'vscode';
+
+const keyEisuu = 102;
+const keyKana = 104;
+
+function sendKeyCode(keyCode: number) {
+    child_process.spawnSync('osascript', ['-e', `tell application "System Events" to key code ${keyCode}`]);
+}
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+    context.subscriptions.push(
+        vscode.commands.registerCommand('mac-eisuu.sendEisuu', () => {
+            sendKeyCode(keyEisuu);
+        })
+    );
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "mac-eisuu" is now active!');
+    context.subscriptions.push(
+        vscode.commands.registerCommand('mac-eisuu.sendKana', () => {
+            sendKeyCode(keyKana);
+        })
+    );
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('mac-eisuu.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Mac Japanese Eisuu!');
-	});
-
-	context.subscriptions.push(disposable);
+    context.subscriptions.push(
+        vscode.window.onDidChangeWindowState((state) => {
+            if (state.focused) {
+                sendKeyCode(keyEisuu);
+            }
+        })
+    );
 }
 
 // This method is called when your extension is deactivated
