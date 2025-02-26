@@ -1,65 +1,65 @@
 {
-    "name": "mac-eisuu",
-    "displayName": "Mac Japanese Eisuu",
-    "description": "Send Mac Eisuu key when a VS Code window gets focus",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.78.0"
-    },
-    "publisher": "artakase",
-    "author": {
-        "name": "TAKASE Arihiro"
-    },
-    "license": "MIT",
-    "homepage": "https://github.com/artakase/vscode-mac-eisuu",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/artakase/vscode-mac-eisuu"
-    },
-    "bugs": {
-        "url": "https://github.com/artakase/vscode-mac-eisuu/issues"
-    },
-    "categories": [
-        "Other"
-    ],
-    "os": [
-        "darwin"
-    ],
-    "activationEvents": [
-        "onStartupFinished"
-    ],
-    "main": "./out/extension.js",
-    "contributes": {
-        "commands": [
-            {
-                "command": "mac-eisuu.sendEisuu",
-                "title": "Mac Japanese Eisuu: Send Eisuu"
-            },
-            {
-                "command": "mac-eisuu.sendKana",
-                "title": "Mac Japanese Eisuu: Send Kana"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "pretest": "npm run compile && npm run lint",
-        "lint": "eslint src --ext ts",
-        "test": "node ./out/test/runTest.js"
-    },
-    "devDependencies": {
-        "@types/vscode": "^1.78.0",
-        "@types/glob": "^8.1.0",
-        "@types/mocha": "^10.0.1",
-        "@types/node": "16.x",
-        "@typescript-eslint/eslint-plugin": "^5.59.1",
-        "@typescript-eslint/parser": "^5.59.1",
-        "eslint": "^8.39.0",
-        "glob": "^8.1.0",
-        "mocha": "^10.2.0",
-        "typescript": "^5.0.4",
-        "@vscode/test-electron": "^2.3.0"
-    }
+  "name": "mac-eisuu",
+  "displayName": "Mac Japanese Eisuu",
+  "description": "Send Mac Eisuu key when a VS Code window gets focus",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "publisher": "artakase",
+  "author": {
+    "name": "TAKASE Arihiro"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/artakase/vscode-mac-eisuu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artakase/vscode-mac-eisuu"
+  },
+  "bugs": {
+    "url": "https://github.com/artakase/vscode-mac-eisuu/issues"
+  },
+  "categories": [
+    "Other"
+  ],
+  "os": [
+    "darwin"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mac-eisuu.sendEisuu",
+        "title": "Mac Japanese Eisuu: Send Eisuu"
+      },
+      {
+        "command": "mac-eisuu.sendKana",
+        "title": "Mac Japanese Eisuu: Send Kana"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.78.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4",
+    "@vscode/test-electron": "^2.3.0"
+  }
 }
