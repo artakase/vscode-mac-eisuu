@@ -7,7 +7,7 @@ const keyEisuu = 102;
 const keyKana = 104;
 
 function sendKeyCode(keyCode: number) {
-    child_process.spawnSync('osascript', ['-e', `tell application "System Events" to key code ${keyCode}`]);
+    child_process.spawnSync('osascript', ['-e', `tell application "System Events" to key code ${keyCode.toFixed(0)}`]);
 }
 
 // This method is called when your extension is activated
@@ -33,6 +33,3 @@ export function activate(context: vscode.ExtensionContext) {
         })
     );
 }
-
-// This method is called when your extension is deactivated
-export function deactivate() {}
