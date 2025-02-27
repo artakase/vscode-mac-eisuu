@@ -33,11 +33,11 @@
     "commands": [
       {
         "command": "mac-eisuu.sendEisuu",
-        "title": "Mac Japanese Eisuu: Send Eisuu"
+        "title": "%mac-eisuu.sendEisuu.title%"
       },
       {
         "command": "mac-eisuu.sendKana",
-        "title": "Mac Japanese Eisuu: Send Kana"
+        "title": "%mac-eisuu.sendKana.title%"
       }
     ]
   },
