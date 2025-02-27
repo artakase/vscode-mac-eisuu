@@ -1,4 +1,5 @@
 {
     "mac-eisuu.sendEisuu.title": "Mac Japanese Eisuu: 英数キーを送信",
-    "mac-eisuu.sendKana.title": "Mac Japanese Eisuu: かなキーを送信"
+    "mac-eisuu.sendKana.title": "Mac Japanese Eisuu: かなキーを送信",
+    "config.mac-eisuu.turnImeOffWhenGainFocus": "VS Code のウィンドウがフォーカスを得たとき IME を無効にします。"
 }

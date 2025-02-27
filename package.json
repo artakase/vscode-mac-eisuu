@@ -39,7 +39,17 @@
         "command": "mac-eisuu.sendKana",
         "title": "%mac-eisuu.sendKana.title%"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Mac Japanese Eisuu",
+      "properties": {
+        "mac-eisuu.turnImeOffWhenGainFocus": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.mac-eisuu.turnImeOffWhenGainFocus%"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

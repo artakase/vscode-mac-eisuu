@@ -1,4 +1,5 @@
 {
     "mac-eisuu.sendEisuu.title": "Mac Japanese Eisuu: Send Eisuu Key",
-    "mac-eisuu.sendKana.title": "Mac Japanese Eisuu: Send Kana Key"
+    "mac-eisuu.sendKana.title": "Mac Japanese Eisuu: Send Kana Key",
+    "config.mac-eisuu.turnImeOffWhenGainFocus": "Turn IME Off When VS Code Window Gain Focus."
 }

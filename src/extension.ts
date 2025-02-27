@@ -13,6 +13,8 @@ function sendKeyCode(keyCode: number) {
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+    let isEnabled: boolean | undefined = undefined;
+
     context.subscriptions.push(
         vscode.commands.registerCommand('mac-eisuu.sendEisuu', () => {
             sendKeyCode(keyEisuu);
@@ -27,8 +29,19 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(
         vscode.window.onDidChangeWindowState((state) => {
-            if (state.focused) {
+            if (isEnabled === undefined) {
+                isEnabled = vscode.workspace.getConfiguration('mac-eisuu').get('turnImeOffWhenGainFocus');
+            }
+            if (state.focused && isEnabled) {
                 sendKeyCode(keyEisuu);
+            }
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.workspace.onDidChangeConfiguration((event) => {
+            if (event.affectsConfiguration('mac-eisuu')) {
+                isEnabled = vscode.workspace.getConfiguration('mac-eisuu').get('turnImeOffWhenGainFocus');
             }
         })
     );
