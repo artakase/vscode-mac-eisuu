@@ -24,3 +24,7 @@ VS Code のウィンドウがアクティブになった際、Mac の英数キ�
 ### `mac-eisuu.sendKana`
 
 かなキーを送信します。
+
+## ライセンス
+
+[MIT](LICENSE) license のもとに公開します。

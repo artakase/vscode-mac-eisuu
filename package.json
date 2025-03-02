@@ -2,7 +2,7 @@
   "name": "mac-eisuu",
   "displayName": "Mac Japanese Eisuu",
   "description": "Send Mac Eisuu key when a VS Code window gets focus",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.78.0"
   },
