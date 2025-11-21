@@ -13,7 +13,7 @@ export default tseslint.config({
         '@typescript-eslint': tseslint.plugin,
     },
     languageOptions: {
-        ecmaVersion: 2020,
+        ecmaVersion: 2022,
         sourceType: 'module',
         parser: tseslint.parser,
         parserOptions: {
