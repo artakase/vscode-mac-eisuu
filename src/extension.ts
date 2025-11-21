@@ -18,24 +18,22 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand('mac-eisuu.sendEisuu', () => {
             sendKeyCode(keyEisuu);
-        })
+        }),
     );
 
     context.subscriptions.push(
         vscode.commands.registerCommand('mac-eisuu.sendKana', () => {
             sendKeyCode(keyKana);
-        })
+        }),
     );
 
     context.subscriptions.push(
         vscode.window.onDidChangeWindowState((state) => {
-            if (isEnabled === undefined) {
-                isEnabled = vscode.workspace.getConfiguration('mac-eisuu').get('turnImeOffWhenGainFocus');
-            }
+            isEnabled ??= vscode.workspace.getConfiguration('mac-eisuu').get('turnImeOffWhenGainFocus');
             if (state.focused && isEnabled) {
                 sendKeyCode(keyEisuu);
             }
-        })
+        }),
     );
 
     context.subscriptions.push(
@@ -43,6 +41,6 @@ export function activate(context: vscode.ExtensionContext) {
             if (event.affectsConfiguration('mac-eisuu')) {
                 isEnabled = vscode.workspace.getConfiguration('mac-eisuu').get('turnImeOffWhenGainFocus');
             }
-        })
+        }),
     );
 }
